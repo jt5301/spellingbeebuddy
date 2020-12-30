@@ -1,8 +1,26 @@
+
+@font-face {
+  font-family: 'franklin';
+  font-weight:500;
+  src:  url('fonts/franklin-normal-500.ttf');
+}
+
+@font-face {
+  font-family: 'franklin';
+  font-weight:700;
+  src:  url('fonts/franklin-normal-700.ttf');
+}
+
+@font-face {
+  font-family: 'karnak';
+  font-weight:400;
+  src:  url('fonts/karnak-normal-400.ttf');
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'franklin',Fallback, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,3 +29,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
