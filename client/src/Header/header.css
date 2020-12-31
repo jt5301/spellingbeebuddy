@@ -1,3 +1,102 @@
+.HeaderContainer{
+  font-family: 'franklin';
+  padding:24px 12px;
+}
+
+#overlayText{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+.overlay a {font-size: 20px}
+.overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+}
+}
+
+.overlay h2, .overlay p {
+color:white;
+}
+
+.Toolbar{
+  border-bottom: 1px solid #bfbfbf;
+  border-top: 1px solid #bfbfbf;
+  color:darkgrey;
+  font-size:larger
+}
+
+#Help{
+  width: 3rem;
+  padding: 20px;
+  margin-left:20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#Help:hover{
+  background:#dcdcdc;
+  color:black;
+}
+
 .Header{
-  font-family: 'karnak'
+  margin:12px;
+}
+
+#title{
+  padding-right:16px;
+  font-family:'karnak';
+  font-size: 40px;
+}
+
+#date{
+  font-size:25px;
+  font-weight:300
 }

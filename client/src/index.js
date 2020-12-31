@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './main/App';
+import Header from './Header';
 import reportWebVitals from './reportWebVitals';
-import Header from './Header'
 
 ReactDOM.render(
   <React.StrictMode>
