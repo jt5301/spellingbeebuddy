@@ -8,7 +8,7 @@ const Hexagon = (props) => {
 
       </div>
       <div id = 'hexagonFill'>
-
+      <div id = 'letter'>p</div>
       </div>
       <div id = 'hexagonRight'>
 
