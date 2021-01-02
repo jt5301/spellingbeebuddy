@@ -51,13 +51,13 @@ font-size:x-large
 
 #hexagonTop{
   float: left;
-  border-right: 30px solid #6C6;
+  border-right: 30px solid #e6e6e6;
   border-top: 52px solid transparent;
   border-bottom: 52px solid transparent;
 }
 #hexagonBottom{
   float: left;
-  border-left: 30px solid #6C6;
+  border-left: 30px solid #e6e6e6;
   border-top: 52px solid transparent;
   border-bottom: 52px solid transparent;
 }
@@ -65,8 +65,6 @@ font-size:x-large
   float: left;
   width: 60px;
   height: 104px;
-  background-color: #6C6;
+  background-color: #e6e6e6;
 }
-
-
 

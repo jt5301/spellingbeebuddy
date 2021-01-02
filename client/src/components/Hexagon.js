@@ -1,15 +1,16 @@
 import React from 'react'
 
-const Hexagon = () => {
+const Hexagon = (props) => {
+  console.log(props)
   return (
-    <div>
-      <div id = 'hexagonTop'>
+    <div className = {props.className}>
+      <div id = 'hexagonLeft'>
 
       </div>
       <div id = 'hexagonFill'>
 
       </div>
-      <div id = 'hexagonBottom'>
+      <div id = 'hexagonRight'>
 
       </div>
     </div>

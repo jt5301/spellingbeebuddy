@@ -1,11 +1,73 @@
 .App {
   display:flex;
-  justify-content:space-evenly
+  justify-content:space-evenly;
+  height:50vh
+}
+
+.hexContainer{
+  position: relative;
+  width: 50%;
+}
+
+.wordsContainer{
+  width:50%
+}
+
+.middleRow{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 95%;
+}
+
+.rightRow{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 95%;
+}
+
+.hexOuter{
+  position: absolute;
+  top: calc(100% / 3);
+  left: 30%;
+  width: 40%;
+  height: calc(100% / 3);
+}
+.hexCenter{
+  position: absolute;
+  top: calc(100% / 3);
+  left: 30%;
+  width: 40%;
+  height: calc(100% / 3);
+  transform: translate(0, 0);
+}
+.hexOuter:nth-child(1){
+  transform: translate(0, -70%);
+}
+.hexOuter:nth-child(2){
+  transform: translate(-28%, -35%);
+}
+.hexOuter:nth-child(3){
+  transform: translate(-28%, 35%)
+}
+.hexOuter:nth-child(4){
+  transform:translate(28%,-35%)
+}
+.hexOuter:nth-child(5){
+  transform:translate(28%, 35%)
+}
+.hexOuter:nth-child(6){
+  transform:translate(0, 70%);
 
 }
-.hexContainer{
-  padding-top:10%
+.leftRow{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 95%;
 }
+
 
 .App-logo {
   height: 40vmin;
