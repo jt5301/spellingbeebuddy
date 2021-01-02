@@ -1,24 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import Hexagon from '../components/Hexagon.js'
 
-
+//hexagon itself doesn't need to know letter. logic all happens in app
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className = 'HexContainer'>
+      <Hexagon className = "App-logo"/>
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      </div>
+      <div className = 'wordsContainer'>
+      <img src={logo} className="App-logo" alt="logo" />
+      </div>
     </div>
   );
 }

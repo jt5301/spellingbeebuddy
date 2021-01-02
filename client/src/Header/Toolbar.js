@@ -1,35 +1,23 @@
-import React, {useState,useRef} from 'react'
+import React, {useState} from 'react'
 import './header.css'
+import Overlay from '../components/Overlay.js'
 export const Toolbar = () => {
-  const [overlay,overlayOn] = useState(true)
-  const node = useRef()
-  //overlay might have to be separate component so unmount can work properlu
-  function turnOverlayOff(event){
+  const [overlayOn,setOverlayOn] = useState(false)
+
+  function turnOverlayOff(){
     document.body.style.backgroundColor = "rgba(0,0,0,0)";
-    overlayOn(false)
-    console.log('remove e')
-    document.removeEventListener('mousedown',handleClick)
-  }
-  function handleClick(){
-    console.log('test')
+    setOverlayOn(false)
   }
 
-  function turnOverlayOn(event){
-    document.addEventListener("mousedown", handleClick);
+  function turnOverlayOn(){
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     console.log('test')
-    overlayOn(true)
-    console.log(overlay)
+    setOverlayOn(true)
   }
   return (
       <div className = 'Toolbar' >
-        {overlay ?
-        <div id = 'overlay' onClick = {(event)=>{
-          turnOverlayOff(event)
-          handleClick()
-          }}>
-          <div id = 'overlayText'>TEST TEST TEST</div>
-        </div>
+        {overlayOn ?
+        <Overlay turnOff = {turnOverlayOff} />
         :
         ''}
         <div id = 'Help' onClick = {(event)=>{turnOverlayOn(event)}}> Help</div>
