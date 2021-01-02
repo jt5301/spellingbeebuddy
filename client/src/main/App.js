@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Hexagon from '../components/Hexagon.js'
 
-//hexagon itself doesn't need to know letter. logic all happens in app
+//hexagon itself doesn't need to know letter. logic all happens in app (edit: may not be tru)
 function App() {
   function addLetter(event){
 

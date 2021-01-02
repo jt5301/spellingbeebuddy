@@ -70,9 +70,21 @@ font-size:x-large
   background-color: #e6e6e6;
 }
 
-#letter{
-  position:relative;
-  top:50%;
-  left:50%;
+#letterInput{
+  font-family: 'franklin';
+  font-weight:700;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size:xx-large;
+  width: inherit;
+  position: relative;
+  top: 25%;
+  /* background-color:#e6e6e6; */
+  border:#e6e6e6
+}
+
+#letterInput:focus {
+  outline: none;
 }
 
