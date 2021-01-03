@@ -1,14 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Hexagon = (props) => {
-  console.log(props)
+  const [letter,setLetter] = useState('')
+
+  function set
   return (
-    <div className = {props.className}>
+    <div id = {props.id} className = {props.className}>
       <div id = 'hexagonLeft'>
 
       </div>
       <div id = 'hexagonFill'>
-      <input id = 'letterInput'></input>
+      <input onChange = {(event)=>{props.checkLetter(event)}} id = 'letterInput'></input>
       </div>
       <div id = 'hexagonRight'>
 

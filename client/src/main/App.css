@@ -7,6 +7,7 @@
 .hexContainer{
   position: relative;
   width: 50%;
+  padding-right:20px
 }
 
 .wordsContainer{
@@ -38,7 +39,6 @@
   position: absolute;
   top: calc(100% / 3);
   left: 30%;
-  width: 40%;
   height: calc(100% / 3);
   transform: translate(0, 0);
 }
@@ -46,20 +46,19 @@
   transform: translate(0, -105%);
 }
 .hexOuter:nth-child(2){
-  transform: translate(-80%, -51%);
+  transform: translate(-78%, -53%);
 }
 .hexOuter:nth-child(3){
-  transform: translate(-80%, 51%)
+  transform: translate(-78%, 53%)
 }
 .hexOuter:nth-child(4){
-  transform:translate(80%,-51%)
+  transform:translate(78%,-53%)
 }
 .hexOuter:nth-child(5){
-  transform:translate(80%, 51%)
+  transform:translate(78%, 53%)
 }
 .hexOuter:nth-child(6){
   transform:translate(0, 105%);
-
 }
 .leftRow{
     display: flex;

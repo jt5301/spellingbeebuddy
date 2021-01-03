@@ -2,15 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 import Hexagon from '../components/Hexagon.js'
 
-//hexagon itself doesn't need to know letter. logic all happens in app (edit: may not be tru)
-function App() {
-  function addLetter(event){
 
+function App() {
+
+  function addLetter(event){
+    console.log(event.target.value)
   }
   return (
     <div className="App">
       <div className = 'hexContainer'>
-        <Hexagon className = "hexOuter"/>
+        <Hexagon checkLetter = {addLetter} id = '1' className = "hexOuter">
+          <div></div>
+        </Hexagon>
+
         <Hexagon className = "hexOuter"/>
         <Hexagon className = "hexOuter"/>
         <Hexagon className = "hexOuter"/>
