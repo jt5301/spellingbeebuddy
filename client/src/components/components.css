@@ -49,28 +49,30 @@ font-size:x-large
   color: black;
 }
 
-#hexagonLeft{
+.hexagonLeft{
   float: left;
-  border-right: 30px solid #e6e6e6;
+  border-right: 30px solid;
+  color:#e6e6e6;
   border-top: 52px solid transparent;
   border-bottom: 52px solid transparent;
 }
 
-#hexagonRight{
+.hexagonRight{
   float: left;
-  border-left: 30px solid #e6e6e6;
+  border-left: 30px solid;
+  color:#e6e6e6;
   border-top: 52px solid transparent;
   border-bottom: 52px solid transparent;
 }
 
-#hexagonFill{
+.hexagonFill{
   float: left;
   width: 60px;
   height: 104px;
   background-color: #e6e6e6;
 }
 
-#letterInput{
+.letterInput{
   font-family: 'franklin';
   font-weight:700;
   text-align: center;
@@ -84,7 +86,7 @@ font-size:x-large
   border:#e6e6e6
 }
 
-#letterInput:focus {
+.letterInput:focus {
   outline: none;
 }
 

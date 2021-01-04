@@ -8,12 +8,10 @@ const Overlay = (props) => {
   const node = useRef()
   function handleClick(event){
     if (node.current.contains(event.target)) {
-      console.log(node,event.target)
       return;
     }
 
     props.turnOff()
-    console.log('test')
   }
   function closeOverlay(){
     props.turnOff()

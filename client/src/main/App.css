@@ -4,11 +4,41 @@
   height:50vh
 }
 
-.hexContainer{
+#hexContainer{
+  display: flex;
+  flex-direction: column-reverse;
   position: relative;
   width: 50%;
   padding-right:20px
 }
+
+#buttonContainer{
+  display: flex;
+  justify-content: center;
+}
+
+#Get_Words{
+  background-color: white;
+  border-radius: 40px;
+  border-width: thin;
+  border: solid 1px ;
+  border-color:#e6e6e6;
+  height: 50px;
+  width: 90px;
+  font-size: 18px;
+  font-weight:300;
+  cursor:pointer;
+}
+
+#Get_Words:active{
+  background-color:#e6e6e6
+}
+
+#Get_Words:focus{
+  outline:none;
+}
+
+
 
 .wordsContainer{
   width:50%

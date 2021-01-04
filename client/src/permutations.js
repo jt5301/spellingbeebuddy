@@ -1,5 +1,5 @@
 const subsequences = {}
-export const allSubsequences = (string, center)=>{
+export const permutations = (string, center)=>{
   for(let i = 0;i<string.length;i++){
     for(let k = string.length;k>i;k--){
       let subString = string.substring(i,k)
@@ -15,4 +15,3 @@ export const allSubsequences = (string, center)=>{
   }
   return subsequences
 }
-
