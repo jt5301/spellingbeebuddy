@@ -1,7 +1,7 @@
 .App {
   display:flex;
   justify-content:space-evenly;
-  height:50vh
+  height:60vh
 }
 
 #hexContainer{
@@ -41,7 +41,12 @@
 
 
 .wordsContainer{
-  width:50%
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  top: calc(100% / 11);
+  right:10%;
+  position: relative;
+  width:30%
 }
 
 .middleRow{
@@ -69,7 +74,7 @@
   position: absolute;
   top: calc(100% / 3);
   left: 30%;
-  height: calc(100% / 3);
+  height: calc(100% / 5);
   transform: translate(0, 0);
 }
 .hexOuter:nth-child(1){

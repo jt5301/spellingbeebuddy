@@ -5,9 +5,11 @@ import Hexagon from '../components/Hexagon.js'
 import {allSubsequences} from '../subsequence.js'
 import {permutations} from '../permutations.js'
 import checkWord from 'check-if-word'
+import {FoundWords} from '../components/FoundWords.js'
 const validWords = checkWord('en')
 
 function App() {
+  const [wordList,setWordList] = useState([])
   const [letters, setLetters] = useState({})
   const [dupeMessage,setDupeMessage] = useState(false)
   function addLetter(event, id){
@@ -42,7 +44,7 @@ function App() {
     for(let word of possibleWords){
       if(validWords.check(word))returnWords.push(word)
     }
-    console.log(returnWords)
+    setWordList(returnWords)
   }
   return (
     <div className="App">
@@ -54,15 +56,14 @@ function App() {
         <Hexagon id = '5' checkLetter = {addLetter} className = "hexOuter"/>
         <Hexagon id = '6' checkLetter = {addLetter} className = "hexOuter"/>
         <Hexagon id = 'center' checkLetter = {addLetter} className = "hexCenter"/>
-      <div id = 'buttonContainer'>
-      <button onClick = {()=>{findWords()}} id = 'Get_Words'>
-      Enter
-      </button>
-      </div>
-
+        <div id = 'buttonContainer'>
+        <button onClick = {()=>{findWords()}} id = 'Get_Words'>
+        Enter
+        </button>
+        </div>
       </div>
       <div className = 'wordsContainer'>
-      <img src={logo} className="App-logo" alt="logo" />
+        <FoundWords wordList = {wordList}/>
       </div>
     </div>
   );
