@@ -4,12 +4,12 @@ import './App.css';
 import Hexagon from '../components/Hexagon.js'
 import {allSubsequences} from '../subsequence.js'
 import {permutations} from '../permutations.js'
-import axios from 'axios'
+import checkWord from 'check-if-word'
+const validWords = checkWord('en')
 
 function App() {
   const [letters, setLetters] = useState({})
   const [dupeMessage,setDupeMessage] = useState(false)
-
   function addLetter(event, id){
     const newSet = {...letters}
     if(event.target.value ==='') delete newSet[id]
@@ -17,27 +17,32 @@ function App() {
     setLetters(newSet)
   }
 
-   function findWords(){
+   async function findWords(){
     if(dupeMessage)console.log('dupe detected')
-    if(Object.keys(letters).length !=7){
+    if(Object.keys(letters).length !==7){
       console.log('needs more chars')
       return
     }
     let string = ''
     for(let letter in letters){
-      if(letter!='center')string+=letters[letter]
+      if(letter!=='center')string+=letters[letter]
     }
     const subsequences = allSubsequences(string,letters.center)
     let returnWords = []
+    let possibleWords = []
     let words = Object.keys(subsequences)
     .filter((word)=>{
-      return word.length >3
+      return word.length > 3
     })
     .map((word)=>{
-
+      const splitString = word.split('')
+      const allPermutations = permutations(splitString)
+      possibleWords = possibleWords.concat(allPermutations)
     })
-    console.log(words.length)
-
+    for(let word of possibleWords){
+      if(validWords.check(word))returnWords.push(word)
+    }
+    console.log(returnWords)
   }
   return (
     <div className="App">

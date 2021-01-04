@@ -1,17 +1,23 @@
-const subsequences = {}
-export const permutations = (string, center)=>{
-  for(let i = 0;i<string.length;i++){
-    for(let k = string.length;k>i;k--){
-      let subString = string.substring(i,k)
-      if(!subsequences[subString])subsequences[subString+center] = true
-      for(let j = i;j<k;j++){
-        let deleteChar = subString[j]
-        let newString = subString.replace(deleteChar,'')
-        if(!subsequences[newString]){
-          allSubsequences(newString,center)
-        }
-      }
+/* Heaps Algorithm */
+export const permutations = (wordArr)=>{
+  const returnPerms = []
+  const swapInPlace = (swapArr,indexA,indexB) =>{
+    const temp = swapArr[indexA]
+    swapArr[indexA] = swapArr[indexB]
+    swapArr[indexB] = temp
+  }
+  const generate = (n,heapArr)=>{
+    if(n===1){
+      returnPerms.push(heapArr.slice().join(''))
+      return
+    }
+    generate(n-1,heapArr)
+    for(let i = 0;i<n-1;i++){
+      if(n%2 ===0)swapInPlace(heapArr,i,n-1)
+      else swapInPlace(heapArr,0,n-1)
+      generate(n-1,heapArr)
     }
   }
-  return subsequences
+  generate(wordArr.length,wordArr.slice())
+  return returnPerms
 }

@@ -6,15 +6,20 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "axios": "^0.21.1",
+    "check-if-word": "^1.2.1",
+    "fs": "0.0.1-security",
+    "is-word": "^1.0.4",
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "scrabble": "^1.0.10",
+    "web-vitals": "^0.2.4",
+    "word-list": "^3.1.0",
+    "wordlist-english": "^1.2.1"
   },
   "scripts": {
-    "start": "react-scripts start --hot",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -36,5 +41,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.19",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/testing-library__jest-dom": "^5.9.5"
   }
 }
