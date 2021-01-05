@@ -10,7 +10,6 @@ const validWords = checkWord('en')
 function App() {
   const [wordList,setWordList] = useState([])
   const [letters, setLetters] = useState({})
-  const [dupeMessage,setDupeMessage] = useState(false)
   const [loading, setLoading] = useState(false)
 
   function addLetter(event, id){
@@ -22,24 +21,26 @@ function App() {
 
   function findWords(){
     setLoading(true)
-    if(dupeMessage)console.log('dupe detected')
     if(Object.keys(letters).length !==7){
       console.log('needs more chars')
       return
     }
+    //get all letters in string besides center letter
     let string = ''
     for(let letter in letters){
       if(letter!=='center')string+=letters[letter]
     }
-    const subsequences = allSubsequences(string,letters.center)
+    const subsequences = allSubsequences(string,letters.center,{})
+    console.log(subsequences)
     let returnWords = []
+    console.log(returnWords)
     let possibleWords = []
     setTimeout(()=>{
       Object.keys(subsequences)
       .filter((word)=>{
         return word.length > 3
       })
-      .map((word)=>{
+      .forEach((word)=>{
         const splitString = word.split('')
         const allPermutations = permutations(splitString)
         possibleWords = possibleWords.concat(allPermutations)
