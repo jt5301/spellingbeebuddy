@@ -28,10 +28,8 @@ function App() {
       return
     }
     //get all letters in string besides center letter
-    console.log(letters)
     let string = ''
     if(!alphabet.includes(letters.center)){
-      console.log('stuck here')
       setErrorMsg('Please enter only upper or lowercase english letters')
       return
     }
@@ -41,7 +39,6 @@ function App() {
         return
       }
       if(string.includes(letters[letter])||(letter !== 'center'&&letters[letter]===letters.center)){
-        console.log(letters[letter],string,letters.center)
         setErrorMsg('Please enter all unique characters')
         return
       }
