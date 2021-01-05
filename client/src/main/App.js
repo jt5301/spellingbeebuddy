@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import logo from './logo.svg';
 import './App.css';
 import Hexagon from '../components/Hexagon.js'
 import {allSubsequences} from '../subsequence.js'
@@ -12,6 +11,8 @@ function App() {
   const [wordList,setWordList] = useState([])
   const [letters, setLetters] = useState({})
   const [dupeMessage,setDupeMessage] = useState(false)
+  const [loading, setLoading] = useState(false)
+
   function addLetter(event, id){
     const newSet = {...letters}
     if(event.target.value ==='') delete newSet[id]
@@ -19,7 +20,8 @@ function App() {
     setLetters(newSet)
   }
 
-   async function findWords(){
+  function findWords(){
+    setLoading(true)
     if(dupeMessage)console.log('dupe detected')
     if(Object.keys(letters).length !==7){
       console.log('needs more chars')
@@ -32,19 +34,22 @@ function App() {
     const subsequences = allSubsequences(string,letters.center)
     let returnWords = []
     let possibleWords = []
-    let words = Object.keys(subsequences)
-    .filter((word)=>{
-      return word.length > 3
-    })
-    .map((word)=>{
-      const splitString = word.split('')
-      const allPermutations = permutations(splitString)
-      possibleWords = possibleWords.concat(allPermutations)
-    })
-    for(let word of possibleWords){
-      if(validWords.check(word))returnWords.push(word)
-    }
-    setWordList(returnWords)
+    setTimeout(()=>{
+      Object.keys(subsequences)
+      .filter((word)=>{
+        return word.length > 3
+      })
+      .map((word)=>{
+        const splitString = word.split('')
+        const allPermutations = permutations(splitString)
+        possibleWords = possibleWords.concat(allPermutations)
+      })
+      for(let word of possibleWords){
+        if(validWords.check(word))returnWords.push(word)
+      }
+      setLoading(false)
+      setWordList(returnWords)
+    },100)
   }
   return (
     <div className="App">
@@ -57,13 +62,15 @@ function App() {
         <Hexagon id = '6' checkLetter = {addLetter} className = "hexOuter"/>
         <Hexagon id = 'center' checkLetter = {addLetter} className = "hexCenter"/>
         <div id = 'buttonContainer'>
-        <button onClick = {()=>{findWords()}} id = 'Get_Words'>
+        <button onClick = {()=>{
+          findWords()
+          }} id = 'Get_Words'>
         Enter
         </button>
         </div>
       </div>
       <div className = 'wordsContainer'>
-        <FoundWords wordList = {wordList}/>
+        <FoundWords loading = {loading} wordList = {wordList}/>
       </div>
     </div>
   );
