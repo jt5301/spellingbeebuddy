@@ -3,7 +3,6 @@ import React,{useState,useEffect} from 'react'
 export const FoundWords = (props) => {
   const [words,setWords] = useState([])
   useEffect(()=>{
-    console.log(props)
     setWords(props.wordList)
   },[props])
   return (

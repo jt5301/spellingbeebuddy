@@ -135,3 +135,7 @@
     transform: rotate(360deg);
   }
 }
+
+#error-msg{
+  margin-bottom:10px
+}
