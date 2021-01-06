@@ -8,6 +8,7 @@ import {FoundWords} from '../components/FoundWords.js'
 const validWords = checkWord('en')
 
 function App() {
+  console.log('deployed')
   const [wordList,setWordList] = useState([])
   const [letters, setLetters] = useState({})
   const [loading, setLoading] = useState(false)
@@ -83,7 +84,7 @@ function App() {
         Enter
         </button>
         </div>
-        {errorMsg.length!=0 ?
+        {errorMsg.length!==0 ?
           <div id = 'error-msg'>{errorMsg}</div>
         :
         ''
